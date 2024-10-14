@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com)
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="stick_omni">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000218461816881267 -0.130880518203144 -9.77445062214105E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.140487709142372" />
+      <inertia
+        ixx="0.00215345256468154"
+        ixy="7.88296592674372E-11"
+        ixz="3.19074097246875E-11"
+        iyy="1.09867943830447E-05"
+        iyz="2.7226738283184E-10"
+        izz="0.00215501707365153" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="wheel">
+    <inertial>
+      <origin
+        xyz="-9.75276575474299E-06 0.000218458818457238 -2.63677968348475E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0242061079937112" />
+      <inertia
+        ixx="7.57780889652512E-06"
+        ixy="1.46719776468829E-22"
+        ixz="1.34364342958016E-20"
+        iyy="1.49067813941567E-05"
+        iyz="1.52876646213088E-22"
+        izz="7.5778088965251E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel"
+    type="continuous">
+    <origin
+      xyz="0 0.064488 0"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="roll_1">
+    <inertial>
+      <origin
+        xyz="-4.8763828771059E-06 2.67147415300428E-16 -8.44614290037606E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00767853331420308" />
+      <inertia
+        ixx="6.66512132715133E-07"
+        ixy="2.64697796016969E-23"
+        ixz="-2.25197129694812E-07"
+        iyy="7.96529756165164E-07"
+        iyz="-3.97046694025453E-23"
+        izz="4.06476885815071E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_roll_1"
+    type="continuous">
+    <origin
+      xyz="0 0.00021846 0.040684"
+      rpy="-1.2898 0.44783 -0.98279" />
+    <parent
+      link="wheel" />
+    <child
+      link="roll_1" />
+    <axis
+      xyz="0.5 0 0.86603" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="roll_2">
+    <inertial>
+      <origin
+        xyz="-2.43819143912888E-06 -3.53883589099269E-16 -4.22307145093309E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00767853331420308" />
+      <inertia
+        ixx="6.66512132715138E-07"
+        ixy="7.27918939046664E-23"
+        ixz="-2.2519712969481E-07"
+        iyy="7.96529756165167E-07"
+        iyz="4.63221143029695E-23"
+        izz="4.06476885815079E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_roll_2"
+    type="continuous">
+    <origin
+      xyz="-0.035241 0.00021846 0.020346"
+      rpy="-0.56207 -0.38025 -1.176" />
+    <parent
+      link="wheel" />
+    <child
+      link="roll_2" />
+    <axis
+      xyz="0.5 0 0.86603" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="roll_3">
+    <inertial>
+      <origin
+        xyz="2.43819143794233E-06 -1.52655665885959E-16 4.22307145020451E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00767853331420308" />
+      <inertia
+        ixx="6.66512132715131E-07"
+        ixy="1.32348898008484E-23"
+        ixz="-2.25197129694813E-07"
+        iyy="7.96529756165162E-07"
+        iyz="3.30872245021211E-23"
+        izz="4.06476885815068E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_roll_3"
+    type="continuous">
+    <origin
+      xyz="-0.035241 0.00021846 -0.020346"
+      rpy="0.56207 -0.38025 -1.9656" />
+    <parent
+      link="wheel" />
+    <child
+      link="roll_3" />
+    <axis
+      xyz="0.5 0 0.86603" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="roll_4">
+    <inertial>
+      <origin
+        xyz="-4.87638287744591E-06 7.21644966006352E-16 -8.44614290076637E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00767853331420308" />
+      <inertia
+        ixx="6.66512132715135E-07"
+        ixy="-2.64697796016969E-23"
+        ixz="-2.25197129694812E-07"
+        iyy="7.96529756165166E-07"
+        iyz="-3.97046694025453E-23"
+        izz="4.06476885815075E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_roll_4"
+    type="continuous">
+    <origin
+      xyz="0 0.00021846 -0.040684"
+      rpy="-1.2898 0.44783 -0.98279" />
+    <parent
+      link="wheel" />
+    <child
+      link="roll_4" />
+    <axis
+      xyz="0.5 0 0.86603" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="roll_5">
+    <inertial>
+      <origin
+        xyz="-2.43819143845234E-06 -4.16333634234434E-17 -4.22307145057921E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00767853331420308" />
+      <inertia
+        ixx="6.66512132715133E-07"
+        ixy="8.27180612553028E-23"
+        ixz="-2.25197129694812E-07"
+        iyy="7.96529756165164E-07"
+        iyz="1.12496563307212E-22"
+        izz="4.06476885815071E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_roll_5"
+    type="continuous">
+    <origin
+      xyz="0.035226 0.00021846 -0.020338"
+      rpy="-0.56207 -0.38025 -1.176" />
+    <parent
+      link="wheel" />
+    <child
+      link="roll_5" />
+    <axis
+      xyz="0.5 0 0.86603" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+  <link
+    name="roll_6">
+    <inertial>
+      <origin
+        xyz="2.43819143846274E-06 5.13478148889135E-16 4.22307144997552E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.00767853331420308" />
+      <inertia
+        ixx="6.66512132715133E-07"
+        ixy="-4.96308367531817E-23"
+        ixz="-2.25197129694812E-07"
+        iyy="7.96529756165164E-07"
+        iyz="-5.29395592033938E-23"
+        izz="4.06476885815071E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://stick_omni/meshes/roll_6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="join_roll_6"
+    type="continuous">
+    <origin
+      xyz="0.035226 0.00021846 0.020338"
+      rpy="0.56207 -0.38025 -1.9656" />
+    <parent
+      link="wheel" />
+    <child
+      link="roll_6" />
+    <axis
+      xyz="0.5 0 0.86603" />
+    <dynamics
+      damping="0"
+      friction="0" />
+  </joint>
+</robot>
