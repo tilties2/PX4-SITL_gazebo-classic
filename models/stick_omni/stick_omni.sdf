@@ -1,0 +1,393 @@
+<sdf version='1.7'>
+  <model name='stick_omni'>
+    <link name='base_link'>
+      <inertial>
+        <pose>-0.000218 -0.130881 -1e-05 0 -0 0</pose>
+        <mass>0.140488</mass>
+        <inertia>
+          <ixx>0.00215345</ixx>
+          <ixy>7.88297e-11</ixy>
+          <ixz>3.19074e-11</ixz>
+          <iyy>1.09868e-05</iyy>
+          <iyz>2.72267e-10</iyz>
+          <izz>0.00215502</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_wheel' type='revolute'>
+      <pose relative_to='base_link'>0 0.064488 0 -1.57079 -1.57079 -3.14159</pose>
+      <parent>base_link</parent>
+      <child>wheel</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='wheel'>
+      <pose relative_to='joint_wheel'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-1e-05 0.000218 -0 0 -0 0</pose>
+        <mass>0.0242061</mass>
+        <inertia>
+          <ixx>7.57781e-06</ixx>
+          <ixy>1.4672e-22</ixy>
+          <ixz>1.34364e-20</ixz>
+          <iyy>1.49068e-05</iyy>
+          <iyz>1.52877e-22</iyz>
+          <izz>7.57781e-06</izz>
+        </inertia>
+      </inertial>
+      <collision name='wheel_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/wheel.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='wheel_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/wheel.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='join_roll_6' type='revolute'>
+      <pose relative_to='wheel'>0.035226 0.000218 0.020338 0.56207 -0.38025 -1.9656</pose>
+      <parent>wheel</parent>
+      <child>roll_6</child>
+      <axis>
+        <xyz>0.5 0 0.86603</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='roll_6'>
+      <pose relative_to='join_roll_6'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>2e-06 0 4e-06 0 -0 0</pose>
+        <mass>0.00767853</mass>
+        <inertia>
+          <ixx>6.66512e-07</ixx>
+          <ixy>-4.96308e-23</ixy>
+          <ixz>-2.25197e-07</ixz>
+          <iyy>7.9653e-07</iyy>
+          <iyz>-5.29396e-23</iyz>
+          <izz>4.06477e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='roll_6_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_6.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roll_6_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_6.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_roll_1' type='revolute'>
+      <pose relative_to='wheel'>0 0.000218 0.040684 -1.2898 0.44783 -0.98279</pose>
+      <parent>wheel</parent>
+      <child>roll_1</child>
+      <axis>
+        <xyz>0.5 0 0.86603</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='roll_1'>
+      <pose relative_to='joint_roll_1'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-5e-06 0 -8e-06 0 -0 0</pose>
+        <mass>0.00767853</mass>
+        <inertia>
+          <ixx>6.66512e-07</ixx>
+          <ixy>2.64698e-23</ixy>
+          <ixz>-2.25197e-07</ixz>
+          <iyy>7.9653e-07</iyy>
+          <iyz>-3.97047e-23</iyz>
+          <izz>4.06477e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='roll_1_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_1.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roll_1_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_1.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_roll_2' type='revolute'>
+      <pose relative_to='wheel'>-0.035241 0.000218 0.020346 -0.56207 -0.38025 -1.176</pose>
+      <parent>wheel</parent>
+      <child>roll_2</child>
+      <axis>
+        <xyz>0.5 0 0.86603</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='roll_2'>
+      <pose relative_to='joint_roll_2'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-2e-06 -0 -4e-06 0 -0 0</pose>
+        <mass>0.00767853</mass>
+        <inertia>
+          <ixx>6.66512e-07</ixx>
+          <ixy>7.27919e-23</ixy>
+          <ixz>-2.25197e-07</ixz>
+          <iyy>7.9653e-07</iyy>
+          <iyz>4.63221e-23</iyz>
+          <izz>4.06477e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='roll_2_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_2.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roll_2_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_2.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_roll_3' type='revolute'>
+      <pose relative_to='wheel'>-0.035241 0.000218 -0.020346 0.56207 -0.38025 -1.9656</pose>
+      <parent>wheel</parent>
+      <child>roll_3</child>
+      <axis>
+        <xyz>0.5 0 0.86603</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='roll_3'>
+      <pose relative_to='joint_roll_3'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>2e-06 -0 4e-06 0 -0 0</pose>
+        <mass>0.00767853</mass>
+        <inertia>
+          <ixx>6.66512e-07</ixx>
+          <ixy>1.32349e-23</ixy>
+          <ixz>-2.25197e-07</ixz>
+          <iyy>7.9653e-07</iyy>
+          <iyz>3.30872e-23</iyz>
+          <izz>4.06477e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='roll_3_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_3.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roll_3_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_3.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_roll_4' type='revolute'>
+      <pose relative_to='wheel'>0 0.000218 -0.040684 -1.2898 0.44783 -0.98279</pose>
+      <parent>wheel</parent>
+      <child>roll_4</child>
+      <axis>
+        <xyz>0.5 0 0.86603</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='roll_4'>
+      <pose relative_to='joint_roll_4'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-5e-06 0 -8e-06 0 -0 0</pose>
+        <mass>0.00767853</mass>
+        <inertia>
+          <ixx>6.66512e-07</ixx>
+          <ixy>-2.64698e-23</ixy>
+          <ixz>-2.25197e-07</ixz>
+          <iyy>7.9653e-07</iyy>
+          <iyz>-3.97047e-23</iyz>
+          <izz>4.06477e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='roll_4_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_4.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roll_4_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_4.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='joint_roll_5' type='revolute'>
+      <pose relative_to='wheel'>0.035226 0.000218 -0.020338 -0.56207 -0.38025 -1.176</pose>
+      <parent>wheel</parent>
+      <child>roll_5</child>
+      <axis>
+        <xyz>0.5 0 0.86603</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <damping>0</damping>
+          <friction>0</friction>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='roll_5'>
+      <pose relative_to='joint_roll_5'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>-2e-06 -0 -4e-06 0 -0 0</pose>
+        <mass>0.00767853</mass>
+        <inertia>
+          <ixx>6.66512e-07</ixx>
+          <ixy>8.27181e-23</ixy>
+          <ixz>-2.25197e-07</ixz>
+          <iyy>7.9653e-07</iyy>
+          <iyz>1.12497e-22</iyz>
+          <izz>4.06477e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='roll_5_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_5.STL</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='roll_5_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://stick_omni/meshes/roll_5.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
