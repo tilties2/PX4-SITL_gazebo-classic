@@ -1,0 +1,38 @@
+services:
+  px4-gazebo-classic:
+    image: px4-gazebo-classic
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - DOCKER_BUILDKIT=1
+    container_name: px4-gazebo-classic
+    tty: true
+    stdin_open: true
+    privileged: true
+    network_mode: host
+    working_dir: /root/PX4-SITL_gazebo-classic
+    volumes:
+        - $XAUTHORITY:$XAUTHORITY
+        - /tmp/.X11-unix:/tmp/.X11-unix:rw
+        - /etc/sudoers.d:/etc/sudoers.d:ro
+        - /dev:/dev
+        - $PWD/../../PX4-SITL_gazebo-classic:/root/PX4-SITL_gazebo-classic
+    environment:
+        - DISPLAY=$DISPLAY
+        - LIBGL_ALWAYS_INDIRECT=1
+        - QT_X11_NO_MITSHM=1
+        - XAUTHORITY=/root/.Xauthority  
+        - NVIDIA_DRIVER_CAPABILITIES=all  
+        - NVIDIA_VISIBLE_DEVICES=all
+    security_opt:
+      - seccomp:unconfined
+    runtime: nvidia
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
