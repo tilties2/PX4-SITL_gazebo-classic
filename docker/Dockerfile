@@ -26,6 +26,9 @@ RUN apt-get update && apt-get install -y \
     libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
     && rm -rf /var/lib/apt/lists/*
 
+# python
+RUN pip3 install Jinja2 numpy 
+
 # mavlink
 WORKDIR /root/third_parties
 RUN git clone https://github.com/mavlink/mavlink.git
@@ -35,6 +38,7 @@ WORKDIR /root/third_parties/mavlink/build
 RUN cmake ..
 RUN make -j4
 RUN make install
+
 
 # Set NVIDIA-related environment variables for GPU support
 ENV NVIDIA_VISIBLE_DEVICES=all
